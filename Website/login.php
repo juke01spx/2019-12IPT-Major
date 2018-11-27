@@ -86,12 +86,12 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 	} else {
 	// ATTEMPTING LOGIN NOW
 		
-		$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+		$conn = new mysqli($dbserver, $dbuser, $dbpassword, $dbname);
 		// Check connection
 		if (!$conn) {
 			die("Faled to connect to MySQL: " .$mysqli->connect_error);
 		}
-		//Get Login fields
+		// Get Login fields
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
@@ -101,14 +101,16 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 		
 		$result = mysqli_query($conn,$sql) or die(mysqli_error($conn)) ;
 		//$result = $conn->query($sql);
-		
-		if ($result) {
+		//echo "After query:".$sql;
+		if (mysqli_num_rows($result) > 0) {
+			//echo "<p>Got some results</p>";
 			// Get the results into $row
 			$row = mysqli_fetch_assoc($result);
 			
 			//echo "<div>UserId:".$row["userID"]."</div>";
 			//echo "<div<isAdmin:".$row["isAdmin"]."</div>";
 			$isAdmin = $row["isAdmin"];
+			//echo "<p> $isAdmin</p>";
 			
 			if ($isAdmin=='Y') {
 				$error = "<p>Admin Logged In Successfully</p>";
@@ -138,9 +140,8 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 <br>
 <br>
 <br>
-
-
-	
+<br>
+<br>
 <br>
 <br>
 </div>

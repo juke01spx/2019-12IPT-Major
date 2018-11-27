@@ -349,3 +349,9 @@ nav > ul > li:hover > ul {
 .demo:hover {
 	opacity: 1;
 }
+
+.bodyboxtextabovelogin {
+	font-size: 50%;
+	margin-top: 3%;
+	text-transform: none;
+}
