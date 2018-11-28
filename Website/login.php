@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 			//echo "<p> $isAdmin</p>";
 			
 			if ($isAdmin=='Y') {
-				$error = "<p>Admin Logged In Successfully</p>";
+				$error = "<p>Welcome back, Administrator</p>";
 			} else {
 				$error = "<p>$username Logged In Successfully</p";
 			
