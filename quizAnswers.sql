@@ -1,0 +1,1 @@
+SELECT a.quizAnswersId, a.quizAnswer, a.quizAnswerCorrectFlag FROM quizAnswers as a where a.quizQuestionsId = 1

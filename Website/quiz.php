@@ -81,7 +81,7 @@ session_unset();
 
 <?php
 
-$error="Processing Login";
+$error="Please Answer The Quiz";
 require 'DBUtils.php';
 	
 if (isset($_POST['submit'])) { // Has the submit button been pressed?
@@ -123,7 +123,6 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 			$_SESSION["username"]=$username;
 			$_SESSION["password"]=$password;
 			$_SESSION["isAdmin"]=$isAdmin;
-			$footer = "<div><div>Current User: $username</div><div> Is Admin: $isAdmin</div></div>";
 			
 		} else {
 			$error = "Invalid Username and Password";
@@ -148,8 +147,6 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 <br>
 </div>
 	
-<footer><span><?php echo $footer; ?></span></footer>
-
 <content>
 <p></p>	
 

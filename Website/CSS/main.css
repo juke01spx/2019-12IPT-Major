@@ -355,3 +355,23 @@ nav > ul > li:hover > ul {
 	margin-top: 3%;
 	text-transform: none;
 }
+
+.nailtitle {
+	font-size: 150%;
+	font-family: Trajan Pro;
+}
+
+.charmstitle {
+	font-size: 150%;
+	font-family: Trajan Pro;
+}
+
+.spellstitle {
+	font-size: 150%;
+	font-family: Trajan Pro;
+}
+
+.abilitiestitle {
+	font-size: 150%;
+	font-family: Trajan Pro;
+}
