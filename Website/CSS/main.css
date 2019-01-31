@@ -375,3 +375,17 @@ nav > ul > li:hover > ul {
 	font-size: 150%;
 	font-family: Trajan Pro;
 }
+
+.bodyboxminitext > form > p > button[type=submit] {
+	border: 1px solid #FFFFFF;
+	color: white;
+	background: #030303;
+	font-family: Trajan Pro;
+	text-transform: uppercase;
+	transform: scale(1.5,1.5);
+}
+
+.bodyboxminitext > form > p > button[type=submit]:hover {
+	background: #343434;
+	cursor: pointer;
+}
