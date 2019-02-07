@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 <br>
 </div>
 	
-<footer><span><?php echo $footer; ?></span></footer>
+<!-- <footer><span><?php echo $footer; ?></span></footer> -->
 
 <content>
 <p></p>	
