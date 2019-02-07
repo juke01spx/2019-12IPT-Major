@@ -232,7 +232,7 @@ header {
 }
 
 .bodyboximageknightsoul {
-	transform: scale(0.4,0.4);
+	transform: scale(0.4,0.4); /*Try 0.3?*/
 	margin-top: -20%;
 }
 
