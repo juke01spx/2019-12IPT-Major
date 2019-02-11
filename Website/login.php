@@ -55,6 +55,7 @@ session_unset();
 	</li>
 	<li><a href="underconstruction.html">Miscellaneous</a>
 		<ul>
+			<li><a href="quiz.php">Quiz</a></li>
 			<li><a href="underconstruction.html">Lore</a></li>
 			<li><a href="underconstruction.html">Cut Content</a></li>
 			<li><a href="underconstruction.html">Game Info</a></li>
