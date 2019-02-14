@@ -8,7 +8,7 @@ session_unset();
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- POSSIBLY REMOVE OR MODIFY TAG? TEST ON 1080p DISPLAY <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <meta charset="utf-8">
-<title>Quiz - Hollow Knight Wiki</title>
+<title>Quiz Results - Hollow Knight Wiki</title>
 <link rel="shortcut icon" href="Img/favicon.ico">
 <link href="CSS/main.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/slideshow.js"></script>
@@ -71,7 +71,7 @@ session_unset();
 <div class="bodybox">
 <br>
 	<div class="bodyboxtitletext">
-		<p>Quiz</p>
+		<p>Quiz Results</p>
 	</div>
 	
 <hr>
@@ -81,76 +81,62 @@ session_unset();
 <div class="bodyboxminitext">
 
 <?php
-
-FUNCTION esc($string) {
-	return str_replace("'","&rsquo;",$string);
-}
-
-$error="Please Answer The Quiz"; //Default message
 require 'DBUtils.php';
+$right = "Y";
+$wrong = "N";
 $conn = getConn();
-
-// GET QUIZ TOPICS THAT ARE ACTIVE FIRST
-$sql = 'SELECT t.quizTopicId, t.quizTopicName FROM quiztopic AS t WHERE t.quizActiveFlag = "Y"';
-
-echo $sql;
-$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-if (mysqli_num_rows($result)>0) {
-	// Get the results into $topic
-	echo "<form id='quiz' name='quiz' action='quizAnswers.php' method='post'>";
-	while($topicRow = mysqli_fetch_assoc($result)) {
-		$quizTopicId = $topicRow["quizTopicId"];
-		$quizTopicName = $topicRow["quizTopicName"];
-		echo "<h2>Topic: $quizTopicName</h2>";
-		
-		$sql2 = "SELECT q.quizQuestionsId, q.quizQuestion FROM quizquestions AS q WHERE q.quizTopicId = $quizTopicId ORDER BY q.quizQuestionsId";
-		echo $sql2;
-		$qresult = mysqli_query($conn,$sql2) or die(mysqli_error($conn));
-		if(mysqli_num_rows($qresult)>0) {
-			$max = mysqli_num_rows($qresult);
-			echo "<input type ='hidden' name='max' value='$max'/>";
-			echo "<ol>";
-			$qno=0;
-			while($questionrow = mysqli_fetch_assoc($qresult)) {
-				$qno++;
-				$quizQuestionsId = $questionrow["quizQuestionsId"];
-				$quizQuestion = esc($questionrow["quizQuestion"]);
-				echo "<h3><li>$quizQuestion</li></h3>";
-				
-				$sql3 = "SELECT a.quizAnswer, a.quizAnswerCorrectFlag FROM quizanswers AS a WHERE a.quizQuestionsId = $quizQuestionsId ORDER BY RAND()"; //a.quizAnswersId
-				echo $sql3;
-				$aresult = mysqli_query($conn,$sql3) or die(mysql_error($conn));
-				if(mysqli_num_rows($aresult)>0) {
-					
-					$ano = 0;
-					echo "<ol type='A'>";
-					while($ansrow = mysqli_fetch_assoc($aresult)) {
-						$ano++;
-						$quizAnswer = esc($ansrow["quizAnswer"]);
-						$quizAnswerCorrectFlag = $ansrow["quizAnswerCorrectFlag"];
-						echo "<li><input type='radio' name='q$qno' id='q$qno$ano' value='$quizAnswerCorrectFlag'>$quizAnswer</input>";
-						if($quizAnswerCorrectFlag=="Y") {
-							echo "<input type='hidden' name='q$qno"."c' value='Q: $quizQuestion".",A:"."$quizAnswer'/>";
-						}
-						echo "</li>";
-						
-					}
-					echo "</ol>";
-				}
-			}
-			echo"</ol>";
-		}
-		echo"<button type='submit' name='submit'>Submit Answers</button>";
-		echo"</form>";
-		}
-	mysqli_close($conn);
-} else {
-	$error ="<p>No Quiz Available!</p>";
-}
 	
+	//Input: $param - question to check in $_POST, e.g. "q1"
+	//Process: Check if question in $_POST is set
+	//			If it is, then return the avlue from $_POST
+	//			Otherwise, just return "F" rather than an error
+	//Output: $answer - the answer we derived in this function
+	
+	FUNCTION checkPost($param) {
+		IF (isset($_POST[$param])){		//Check if the $_POST exists
+			$answer = $_POST[$param];	//Retrieve it if it does
+		} ELSE {						//Otherwise
+			$answer = $GLOBALS['wrong'];
+		}
+		RETURN $answer;
+	}
+
+	//Function: Check Answer
+	//Input: $qno - Question number
+	//		$answer - the answer passed in from the webpage
+	//		$correct - the correct answer to the quiz question
+	//Process: This function checks the answer passed in and displays the correct answer
+	//		and increments the totalscore
+	//Output: $totscore - the toal score passed in and incremented by 1 if correct
+	
+	FUNCTION checkAnswer($qno, $answer) {
+		IF($answer==$GLOBALS['right']) {
+			$ok = TRUE;
+			echo("<p>Well done, ".$qno." is correct</p>");
+		} ELSE {
+			$ok = FALSE;
+			$correct=$_POST[$qno."c"];
+			echo("<p>Sorry, ".$qno." is incorrect. The correct answer is '".$correct."'</p>");
+		}
+		RETURN $ok;
+	}
+	$qno = "q";
+	$totalscore = 0;
+	$max = checkPost('max');
+	echo('max='.$max);
+	
+	//Loop through from 1 to maximum number of questions, incremnting by 1
+	FOR ($x=1;$x<=$max;$x++) {
+		$q = $qno.$x;
+		$ok = checkAnswer($q, checkPost($q));
+		IF ($ok==TRUE) {
+			$totalscore +=1;
+		}
+	}
+	ECHO("<h3>Total score is ".$totalscore." out of ".$max."</h3>");
 ?>
 
-<span><?php echo $error; ?></span>
+<!--<span><?php echo $error; ?></span>-->
 </div>
 	
 <br>
