@@ -112,18 +112,20 @@ $conn = getConn();
 	FUNCTION checkAnswer($qno, $answer) {
 		IF($answer==$GLOBALS['right']) {
 			$ok = TRUE;
-			echo("<p>Well done, ".$qno." is correct</p>");
+			echo("<p><strong>Well done,</strong> ".$qno." is correct</p>");
+			echo "<br>";
 		} ELSE {
 			$ok = FALSE;
 			$correct=$_POST[$qno."c"];
-			echo("<p>Sorry, ".$qno." is incorrect. The correct answer is '".$correct."'</p>");
+			echo("<p><strong>Sorry, ".$qno." is incorrect.</strong> The correct answer for '".$correct."'</p>");
+			echo "<br>";
 		}
 		RETURN $ok;
 	}
 	$qno = "q";
 	$totalscore = 0;
 	$max = checkPost('max');
-	echo('max='.$max);
+	//echo('max='.$max);
 	
 	//Loop through from 1 to maximum number of questions, incremnting by 1
 	FOR ($x=1;$x<=$max;$x++) {
@@ -133,6 +135,8 @@ $conn = getConn();
 			$totalscore +=1;
 		}
 	}
+	echo "<br>";
+	echo "<br>";
 	ECHO("<h3>Total score is ".$totalscore." out of ".$max."</h3>");
 ?>
 

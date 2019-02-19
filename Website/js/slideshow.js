@@ -1,6 +1,6 @@
 // Try an Onload (Success! :D)
 var slideIndex = 1;
-showSlides(slideIndex);
+	showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
@@ -15,7 +15,7 @@ function currentSlide(n) {
 function showSlides(n) {
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
-	var dots = document.getElementsByClassName("demo");
+	var dots = document.getElementsByClassName("thumbnail");
 	var captionText = document.getElementById("caption");
 	if (n > slides.length) {slideIndex = 1}
 	if (n < 1) {slideIndex = slides.length}

@@ -93,7 +93,7 @@ $conn = getConn();
 // GET QUIZ TOPICS THAT ARE ACTIVE FIRST
 $sql = 'SELECT t.quizTopicId, t.quizTopicName FROM quiztopic AS t WHERE t.quizActiveFlag = "Y"';
 
-echo $sql;
+//echo $sql;
 $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 if (mysqli_num_rows($result)>0) {
 	// Get the results into $topic
@@ -101,10 +101,13 @@ if (mysqli_num_rows($result)>0) {
 	while($topicRow = mysqli_fetch_assoc($result)) {
 		$quizTopicId = $topicRow["quizTopicId"];
 		$quizTopicName = $topicRow["quizTopicName"];
-		echo "<h2>Topic: $quizTopicName</h2>";
+		echo'<div class="bodyboxmaintext">';
+		echo "<p>Welcome to the $quizTopicName quiz</p>";
+		echo'</div>';
+		echo '<br>';
 		
 		$sql2 = "SELECT q.quizQuestionsId, q.quizQuestion FROM quizquestions AS q WHERE q.quizTopicId = $quizTopicId ORDER BY q.quizQuestionsId";
-		echo $sql2;
+		//echo $sql2;
 		$qresult = mysqli_query($conn,$sql2) or die(mysqli_error($conn));
 		if(mysqli_num_rows($qresult)>0) {
 			$max = mysqli_num_rows($qresult);
@@ -112,13 +115,17 @@ if (mysqli_num_rows($result)>0) {
 			echo "<ol>";
 			$qno=0;
 			while($questionrow = mysqli_fetch_assoc($qresult)) {
+				
 				$qno++;
 				$quizQuestionsId = $questionrow["quizQuestionsId"];
+				echo "<br>";
+				echo "<br>";
 				$quizQuestion = esc($questionrow["quizQuestion"]);
 				echo "<h3><li>$quizQuestion</li></h3>";
-				
+	
 				$sql3 = "SELECT a.quizAnswer, a.quizAnswerCorrectFlag FROM quizanswers AS a WHERE a.quizQuestionsId = $quizQuestionsId ORDER BY RAND()"; //a.quizAnswersId
-				echo $sql3;
+				//echo $sql3;
+				
 				$aresult = mysqli_query($conn,$sql3) or die(mysql_error($conn));
 				if(mysqli_num_rows($aresult)>0) {
 					
@@ -128,9 +135,12 @@ if (mysqli_num_rows($result)>0) {
 						$ano++;
 						$quizAnswer = esc($ansrow["quizAnswer"]);
 						$quizAnswerCorrectFlag = $ansrow["quizAnswerCorrectFlag"];
+						echo "<div class='radiobuttons'>";
 						echo "<li><input type='radio' name='q$qno' id='q$qno$ano' value='$quizAnswerCorrectFlag'>$quizAnswer</input>";
+						echo "</div>";
 						if($quizAnswerCorrectFlag=="Y") {
-							echo "<input type='hidden' name='q$qno"."c' value='Q: $quizQuestion".",A:"."$quizAnswer'/>";
+							echo "<input type='hidden' name='q$qno"."c' value='Q: $quizQuestion "."is A: "."$quizAnswer'/>";
+							
 						}
 						echo "</li>";
 						
@@ -138,10 +148,14 @@ if (mysqli_num_rows($result)>0) {
 					echo "</ol>";
 				}
 			}
-			echo"</ol>";
+			echo "</ol>";
 		}
-		echo"<button type='submit' name='submit'>Submit Answers</button>";
-		echo"</form>";
+		echo "<br>";
+		echo "<br>";
+		echo '<div class="submitquiz">';
+		echo "<button type='submit' name='submit'>Submit Answers</button>";
+		echo '</div>';
+		echo "</form>";
 		}
 	mysqli_close($conn);
 } else {
@@ -150,7 +164,7 @@ if (mysqli_num_rows($result)>0) {
 	
 ?>
 
-<span><?php echo $error; ?></span>
+<!--<span><?php echo $error; ?></span>-->
 </div>
 	
 <br>
