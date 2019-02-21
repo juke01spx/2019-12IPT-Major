@@ -136,7 +136,7 @@ if (mysqli_num_rows($result)>0) {
 						$quizAnswer = esc($ansrow["quizAnswer"]);
 						$quizAnswerCorrectFlag = $ansrow["quizAnswerCorrectFlag"];
 						echo "<div class='radiobuttons'>";
-						echo "<li><input type='radio' name='q$qno' id='q$qno$ano' value='$quizAnswerCorrectFlag'>$quizAnswer</input>";
+						echo "<li><label class='container'><input type='radio' name='q$qno' id='q$qno$ano' value='$quizAnswerCorrectFlag'><span class ='checkmark'>$quizAnswer</span></input></label>";
 						echo "</div>";
 						if($quizAnswerCorrectFlag=="Y") {
 							echo "<input type='hidden' name='q$qno"."c' value='Q: $quizQuestion "."is A: "."$quizAnswer'/>";
