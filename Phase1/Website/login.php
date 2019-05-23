@@ -8,77 +8,63 @@ session_unset();
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- POSSIBLY REMOVE OR MODIFY TAG? TEST ON 1080p DISPLAY <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <meta charset="utf-8">
-<title>Login - </title>
+<title>Login - Mechanical Engineering</title>
 <link rel="shortcut icon" href="Img/favicon.ico">
 <link href="CSS/main.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/slideshow.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<script type="text/javascript" src="js/login.js"></script>
 </head>
 
 <body>
-	
+
 <header>
-
-
-	
-</header>
-	<br>
 	
 <!-- Navigation bar at the top of the page. -->
-	
 <div class="navigationbar">
 	<nav>
 	
 	<ul>
 
-	<li><a href="index.html">Home</a></li>
-	<li><a href="login.html">Login</a></li>
-	<li><a href="underconstruction.html">Characters</a>
+	<li><a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
+	<li><a class="active" href="login.html"><i class="fa fa-fw fa-user"></i> Login</a></li>
+	<li><a style="cursor: pointer;"><i class="fas fa-code-branch"></i> Branches</a>
 		<ul>
-            <li><a href="theknight.html">The Knight</a></li>
-            <li><a href="underconstruction.html">Friendly NPCs</a></li>
-			<li><a href="underconstruction.html">Enemy NPCs</a></li>
-			<li><a href="underconstruction.html">Bosses</a></li>
+            <li><a href="automotiveengineering.html">Automotive Engineering</a></li>
+            <li><a href="underconstruction.html">Aerospace Engineering</a></li>
+			<li><a href="underconstruction.html">Marine Engineering</a></li>
+			<li><a href="underconstruction.html">Power Plant Engineering</a></li>
+			<li><a href="underconstruction.html">Mechatronics</a></li>
+			<li><a href="underconstruction.html">More...</a></li>
 		</ul>
 	</li>
-	<li><a href="underconstruction.html">Combat</a></li>
-	<li><a href="underconstruction.html">The World</a>
-		<ul>
-            <li><a href="underconstruction.html">Areas</a></li>
-            <li><a href="underconstruction.html">Exploration</a></li>
-		</ul>
-	</li>
-	<li><a href="underconstruction.html">Inventory</a>
-		<ul>
-			<li><a href="underconstruction.html">Items</a></li>
-			<li><a href="underconstruction.html">Charms</a></li>
-		</ul>
-	</li>
-	<li><a href="underconstruction.html">Miscellaneous</a>
-		<ul>
-			<li><a href="quiz.php">Quiz</a></li>
-			<li><a href="underconstruction.html">Lore</a></li>
-			<li><a href="underconstruction.html">Cut Content</a></li>
-			<li><a href="underconstruction.html">Game Info</a></li>
-		</ul>
-	</li>	
+	<li><a href="quiz.php"><i class="fas fa-puzzle-piece"></i> Quiz</a></li>
+	<li id="mutebuttonli" style="margin-left: 0%;"><a id="mutebutton" style="cursor: default; margin-left: 950%;">Audio<label class="switch" style="cursor:pointer; transform: scale(0.5,0.5); margin-top: -0.6%;"><input type="checkbox" onclick="var toggleAudio = document.getElementById('loginpopup'); toggleAudio.muted = !toggleAudio.muted;" style="cursor: pointer;"><span class="slider round"></span></label></a></li>
 	</ul>
 
 	</nav>
 </div>
+	
+</header>
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+	
 <!-- Start Main Body -->
 
-<div class="bodybox">
-<br>
-	<div class="bodyboxtitletext">
-		<p>Login</p>
-	</div>
+<div class="bodyboxtitletext">
+	<p>Login</p>
+</div>
 	
-<hr>
-<br>
-<br>	
+<hr style="margin-right: 10%; margin-left: 5%;">
 	
-<div class="bodyboxminitext">
+<div class="bodyboxmaintext">
 
 <?php
 
@@ -117,7 +103,7 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 			if ($isAdmin=='Y') {
 				$error = "<p>Welcome back, Administrator</p>";
 			} else {
-				$error = "<p>$username Logged In Successfully</p";
+				$error = "<p>Welcome, $username. You have logged In Successfully.</p";
 			
 			}
 			
@@ -127,7 +113,7 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 			$footer = "<div><div>Current User: $username</div><div> Is Admin: $isAdmin</div></div>";
 			
 		} else {
-			$error = "Invalid Username and Password";
+			$error = "Invalid Username and/or Password";
 		}
 		
 			mysqli_close($conn);
@@ -148,28 +134,12 @@ if (isset($_POST['submit'])) { // Has the submit button been pressed?
 <br>
 <br>
 </div>
-	
-<!-- <footer><span><?php echo $footer; ?></span></footer> -->
 
 <content>
 <p></p>	
 
 
-<!--<div class="bottomnav">
-
-<nav>
 	
-<ul>
-	
-<li><a href="about.html" style="font-family: 'Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';">About</a></li>
-<li><a href="faq.html" style="font-family: 'Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif;">Support and FAQ</a></li>
-<li><a href="login.html" style="font-family: 'Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';">Login</a></li>	
-
-</ul>	
-
-</nav>
-
-</div>-->
 </content>
 <!-- <script src="js/jquery-1.11.3.min.js"></script> -->
 <script src="js/jquery-3.2.1.min.js"></script>
