@@ -9,11 +9,18 @@ session_unset();
 <!-- POSSIBLY REMOVE OR MODIFY TAG? TEST ON 1080p DISPLAY <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <meta charset="utf-8">
 <title>Quiz Results - Mechanical Engineering</title>
+<!-- Icon for webpage -->
 <link rel="shortcut icon" href="Img/favicon.ico">
+	
+<!-- Link to CSS -->
 <link href="CSS/main.css" rel="stylesheet" type="text/css">
+	
+<!-- Link to custom icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<script type="text/javascript" src="js/slideshow.js"></script>
+	
+
 </head>
 
 <body>
@@ -32,7 +39,7 @@ session_unset();
 
 	<li><a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
 	<li><a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a></li>
-	<li><a style="cursor: pointer;"><i class="fas fa-code-branch"></i> Branches</a>
+	<li><a id="branchestab"><i class="fas fa-code-branch"></i> Branches</a>
 		<ul>
             <li><a href="automotiveengineering.html">Automotive Engineering</a></li>
             <li><a href="underconstruction.html">Aerospace Engineering</a></li>
@@ -43,7 +50,7 @@ session_unset();
 		</ul>
 	</li>
 	<li><a class="active" href="quiz.php"><i class="fas fa-puzzle-piece"></i> Quiz</a></li>
-	<li id="mutebuttonli" style="margin-left: 0%;"><a id="mutebutton" style="cursor: default; margin-left: 950%;">Audio<label class="switch" style="cursor:pointer; transform: scale(0.5,0.5); margin-top: -0.6%;"><input type="checkbox" onclick="var toggleAudio = document.getElementById('loginpopup'); toggleAudio.muted = !toggleAudio.muted;" style="cursor: pointer;"><span class="slider round"></span></label></a></li>
+	<li id="mutebuttonli"><a id="mutebutton">Audio<label class="switch"><input type="checkbox" id="mutebuttoncheckbox" onclick="var toggleAudio = document.getElementById('loginpopup'); toggleAudio.muted = !toggleAudio.muted;"><span class="slider round"></span></label></a></li>
 	</ul>
 
 	</nav>

@@ -642,10 +642,13 @@ span.password {
 
 /* The switch - the box around the slider */
 .switch {
-  position: absolute;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+	position: absolute;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	cursor:pointer;
+	transform: scale(0.5,0.5);
+	margin-top: -0.6%;
 }
 
 /* Hide default HTML checkbox */
@@ -704,6 +707,11 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+#mutebutton {
+	cursor: default; 
+	margin-left: 950%;
+}
+
 #mutebutton:hover {
 	background-color: black;
 }
@@ -714,4 +722,11 @@ input:checked + .slider:before {
 
 .quizTopicName {
 	margin-left: -7%;
+}
+#mutebuttoncheckbox {
+	cursor: pointer;
+}
+
+#branchestab {
+	cursor: pointer;
 }
