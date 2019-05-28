@@ -33,29 +33,10 @@ session_unset();
 </header>
 
 <!-- Navigation bar at the top of the page. -->
-<div class="navigationbar">
-	<nav>
-	
-	<ul>
-
-	<li><a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
-	<li><a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a></li>
-	<li><a id="branchestab"><i class="fas fa-code-branch"></i> Branches</a>
-		<ul>
-            <li><a href="automotiveengineering.html">Automotive Engineering</a></li>
-            <li><a href="underconstruction.html">Aerospace Engineering</a></li>
-			<li><a href="underconstruction.html">Marine Engineering</a></li>
-			<li><a href="underconstruction.html">Power Plant Engineering</a></li>
-			<li><a href="underconstruction.html">Mechatronics</a></li>
-			<li><a href="underconstruction.html">More...</a></li>
-		</ul>
-	</li>
-	<li><a class="active" href="quiz.php"><i class="fas fa-puzzle-piece"></i> Quiz</a></li>
-	<li id="mutebuttonli"><a id="mutebutton">Audio<label class="switch"><input type="checkbox" id="mutebuttoncheckbox" onclick="var toggleAudio = document.getElementById('loginpopup'); toggleAudio.muted = !toggleAudio.muted;"><span class="slider round"></span></label></a></li>
-	</ul>
-
-	</nav>
-</div>
+<?php 
+	$active = "quiz";
+	require 'navbar.php';
+?>
 
 <!-- Start Main Body -->
 	

@@ -19,6 +19,7 @@ header > h1 {
 	position: relative;
 }*/
 
+/*The container of the body*/
 .bodybox {
 	margin-top: -1.5%;
 	background-color: #626262;
@@ -104,121 +105,6 @@ header > h1 {
 	text-align: left;
 }
 
-.bodyboxpi {
-	text-align: right;
-	overflow: hidden;
-	position: absolute;
-	margin-left: 70%;
-	margin-top: -1%;
-	transform: scale(0.85,0.85);
-}
-
-.bodyboximage {
-	transform: scale(1,1);
-}
-
-.bodyboxmaintextknight {
-	font-size: 100%;
-	text-align: left;
-	vertical-align: baseline;
-	font-family: Trajan Pro;
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-bottom: -2%;
-}
-
-.bodybox > .sectionbreak {
-	transform: scale(0.8,0.8);
-	background-position: center;
-	margin-left: 0%;
-	margin-right: 30%;
-	
-}
-
-.bodybox > .smallsectionbreak {
-	transform: scale(1,1);
-	background-position: center;
-	margin-left: 0%;
-	margin-right: 0%;
-	margin-bottom: -3%;
-}
-
-.bodybox > .bodyboxtitletextafterbreakknight > hr {
-	margin-left: 30%;
-	margin-right: 30%;
-	margin-top: -2%;
-	margin-bottom: 8%;
-	border: 0;
-	border-top: 1px solid #484b4f;
-	border-color: #484b4f;
-}
-
-.bodybox > .bodyboxtitletextafterbreakknight {
-	font-size: 200%;
-	text-align: center;
-	vertical-align: baseline;
-	font-family: Trajan Pro;
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-bottom: -2%;
-}
-
-.bodybox > .bodyboxmaintextafterbreakknight {
-	font-size: 100%;
-	text-align: left;
-	vertical-align: baseline;
-	font-family: Trajan Pro;
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-bottom: -2%;
-}
-
-.healthtitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
-.bodybox > .bodyboxsoultextafterbreakknight {
-	font-size: 100%;
-	text-align: left;
-	vertical-align: baseline;
-	font-family: Trajan Pro;
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-bottom: -2%;
-}
-
-.soultitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
-.bodyboxtextabovelogin {
-	font-size: 50%;
-	margin-top: 3%;
-	text-transform: none;
-}
-
-.nailtitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
-.charmstitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
-.spellstitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
-.abilitiestitle {
-	font-size: 150%;
-	font-family: Trajan Pro;
-}
-
 .bodyboxminitext > form > button[type=submit] {
 	border: 1px solid #FFFFFF;
 	border-radius: 2px;
@@ -250,21 +136,6 @@ header > h1 {
 .submitquiz > button[type=submit]:hover {
 	background-color: #474747;
 	border-radius: 2px;
-}
-
-.bodyboximageknightsoul {
-	transform: scale(0.4,0.4); /*Try 0.3?*/
-	margin-top: -20%;
-}
-
-.bodyboxmaintextafterbreakknight > ul > li{
-	font-size: 100%;
-	text-align: left;
-	vertical-align: baseline;
-	font-family: Trajan Pro;
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-bottom: -2%;
 }
 
 content > p {
@@ -339,6 +210,11 @@ nav > ul > li:hover > ul {
 	border-radius: 0px;
 }
 
+.active:hover {
+	background-color: limegreen;
+	border-radius: 0px;
+}
+
 .bodyboxbravetext > carouselcontent {
 	transform: scale(0.5,0.5);
 }
@@ -346,6 +222,7 @@ nav > ul > li:hover > ul {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
 	position: relative;
+	transform: scale(1);
 }
 
 /* Hide the images by default */
@@ -374,7 +251,7 @@ nav > ul > li:hover > ul {
 	-webkit-user-select: none;
 	transition: all .1s ease-in-out;
 	font-style: normal;
-	transform: scale(1.3,1.3);
+	transform: scale(2,2);
 }
 
 /* Position the "next button" to the right */
@@ -385,7 +262,7 @@ nav > ul > li:hover > ul {
 
 /* On hover, enlargen the arrow size (with a smooth transition (defined in the .prev,.next divs))*/
 .prev:hover, .next:hover {
-	transform: scale(1.8,1.8);
+	transform: scale(2.5,2.5);
 }
 
 .row:after {
@@ -653,58 +530,57 @@ span.password {
 
 /* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 /* The slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: limegreen;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: limegreen;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
 	margin-left: 26px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #ccc;
+	background-color: #ccc;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #ccc;
+	box-shadow: 0 0 1px #ccc;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(-26px);
-  -ms-transform: translateX(-26px);
-  transform: translateX(-26px);
+	-webkit-transform: translateX(-26px);
+	-ms-transform: translateX(-26px);
+	transform: translateX(-26px);
 }
 
-/* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 #mutebutton {
