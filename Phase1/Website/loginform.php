@@ -102,7 +102,7 @@
 
 				<br>
 				
-				<!-- Submits loginForm details -->
+				<!-- Submit loginForm details -->
 				<div class="submitlogin">
 					<button type="submit" name="submit" id="submit" onClick="document.getElementById('id01').style.display='block'">Login</button>
 				</div>

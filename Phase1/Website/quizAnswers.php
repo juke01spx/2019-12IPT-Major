@@ -93,12 +93,12 @@ $conn = getConn();
 	FUNCTION checkAnswer($qno, $answer) {
 		IF($answer==$GLOBALS['right']) {
 			$ok = TRUE;
-			echo("<p><strong>Well done,</strong> ".$qno." is correct</p>");
+			echo("<div class='qnocorrectstyling'><p><strong>Well done,</strong> ".$qno." is correct</p></div>");
 			echo "<br>";
 		} ELSE {
 			$ok = FALSE;
 			$correct=$_POST[$qno."c"];
-			echo("<p><strong>Sorry, ".$qno." is incorrect.</strong> The correct answer for '".$correct."'</p>");
+			echo("<div class='qnoincorrectstyling'><p><strong>Sorry, ".$qno." is incorrect.</strong></div> The correct answer for '".$correct."'</p>");
 			echo "<br>";
 		}
 		RETURN $ok;
@@ -118,8 +118,17 @@ $conn = getConn();
 	}
 	echo "<br>";
 	echo "<br>";
-	ECHO("<h3>Total score is ".$totalscore." out of ".$max."</h3>");
+	
+	if($totalscore <= '7') {
+		echo("<div class='totalscoremessage'><h3>Total score is ".$totalscore." out of ".$max."</h3></div>"); }
+	else {
+		echo("<div class='totalscoremessage'><h3>Great job! You got ".$totalscore." out of ".$max."!</h3></div>");
+	}
 ?>
+	
+<div class="quizreturn">
+	<a href="quiz.php">Return</a>
+</div>
 
 <!--<span><?php echo $error; ?></span>-->
 </div>
