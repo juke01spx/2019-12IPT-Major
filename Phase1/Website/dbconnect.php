@@ -1,6 +1,6 @@
 <?php
-$dbserver="127.0.0.1";
-$dbuser="LocalClient";
-$dbpassword="pinkycows15";
+$dbserver=$_SERVER["SERVER_NAME"];
+$dbuser="juke01";
+$dbpassword="password";
 $dbname="juke01db";
 ?>
