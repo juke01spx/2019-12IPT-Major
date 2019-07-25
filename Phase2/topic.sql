@@ -1,0 +1,1 @@
+SELECT t.quizTopicName, t.quizTopicId FROM quiztopic AS t WHERE t.quizActiveFlag = 'Y'

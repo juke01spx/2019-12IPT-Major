@@ -1,0 +1,1 @@
+SELECT q.quizQuestion, q.quizQuestionsId FROM quizquestions AS q, quizTopic AS t WHERE t.quizTopicId = q.quizTopicId AND t.quizTopicId = 1

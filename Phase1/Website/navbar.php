@@ -15,6 +15,7 @@
 			<li><a href="underconstruction.php">Power Plant Engineering</a></li>
 			<li><a href="underconstruction.php">Mechatronics</a></li>
 			<li><a href="underconstruction.php">More...</a></li>
+			<li><a href="bitesthedust.php">Killer Queen...</a></li>
 		</ul>
 	</li>
 	<li <?php if($active == "quiz") {echo 'class="active"';} ?>><a href="quiz.php"><i class="fas fa-puzzle-piece"></i> Quiz</a></li>

@@ -1,0 +1,720 @@
+@charset "utf-8";
+* { box-sizing: border-box; }
+header > h1 {
+	font-family: Courier;
+	text-align: center;
+	color: white;
+	border: solid #AFE6F9;
+}
+
+/*header {
+	margin-top: -6%;
+	margin-bottom: -8%;
+	background-image: url(../Img/logo1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 550px;
+	transform: scale(0.70,0.70);
+	z-index: 4;
+	position: relative;
+}*/
+
+/*The container of the body*/
+.bodybox {
+	margin-top: -1.5%;
+	background-color: #626262;
+	vertical-align: baseline;
+	text-align: center;
+	color: white;
+	border: 3px solid black;
+	border-radius: 10px;
+	margin-left: 12%;
+	margin-right: 12%;
+	z-index: 5;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+}
+
+.bodyboximage {
+	text-align: center;
+	margin: 0% 40.15% 0% 40.15%;
+	transform: scale(1.2,1.2);
+	
+}
+
+.bodyboxtitletext {
+	font-size: 300%;
+	vertical-align: baseline;
+	margin-left: 12%;
+	margin-right: 12%;
+	font-family: "Segoe UI",Arial,sans-serif;
+	font-weight: 400;
+	margin-bottom: -2%;
+	margin-top: -3%;
+}
+
+.bodybox > hr {
+	margin-left: 20%;
+	margin-right: 20%;
+	border: 0;
+	border-top: 1px solid white;
+	border-color: lightgrey;
+}
+
+.bodyboxsubtitletext {
+	font-size: 200%;
+	vertical-align: baseline;
+	margin-left: 12%;
+	margin-right: 12%;
+	font-family: "Segoe UI",Arial,sans-serif;
+	margin-bottom: -2%;
+}
+
+.bodyboxmaintext {
+	font-size: 150%;
+	vertical-align: baseline;
+	margin-left: 12%;
+	margin-right: 12%;
+	text-transform: uppercase;
+	font-family: "Segoe UI",Arial,sans-serif;
+	letter-spacing: 1px;
+}
+
+.bodyboxbravetitle {
+	font-size: 200%;
+	vertical-align: baseline;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-family: "Segoe UI",Arial,sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.bodyboxbravetitle > hr {
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-top: -2%;
+	border: 0;
+	border-top: 1px solid #484b4f;
+	border-color: #484b4f;
+}
+
+.bodyboxbravetext {
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 150%;
+	font-style: italic;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-family: "Segoe UI",Arial,sans-serif;
+	margin-bottom: -2%;
+	text-align: left;
+}
+
+.bodyboxminitext > form > button[type=submit] {
+	border: 1px solid #FFFFFF;
+	border-radius: 2px;
+	color: white;
+	background: #030303;
+	font-family: "Segoe UI",Arial,sans-serif;
+	text-transform: uppercase;
+	transform: scale(1.5,1.5);
+}
+
+.bodyboxminitext > form > button[type=submit]:hover {
+	background: #343434;
+	cursor: pointer;
+	box-shadow: 0px 2px 12px #727272;
+}
+
+.submitquiz > button[type=submit] {
+	background-color: black;
+	color: white;
+	padding: 14px 40px;
+	margin: 8px 0px 0px 12%;
+	border: none;
+	cursor: pointer;
+	width: 15%;
+	border-radius: 2px;
+	transform: scale(1.5, 1.5);
+	transition: all .05s ease-in-out;
+}
+
+.submitquiz > button[type=submit]:hover {
+	background-color: #474747;
+	border-radius: 2px;
+	transform: scale(1.6,1.6);
+}
+
+content > p {
+	font-family: Courier New;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	text-transform: Uppercase;
+	
+}
+body {
+	background-color: white;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+ul {
+	background-color: black;
+	padding: 0;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	position: relative;
+	z-index: 99;
+	border-radius: 0px;
+}
+
+a {
+	padding: 20px;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+}
+
+nav > ul > li {
+	display: inline-block;
+}
+
+nav > ul > li > ul {
+	background-color: black;
+	list-style: none;
+	padding: 0;
+	position: absolute;
+}
+nav > ul > li:hover {
+	background-color: rgba(39,39,39,1.00);
+	z-index: 100;
+	border-radius: 0px;
+	text-decoration: none;
+}
+
+nav > ul > li > ul > li {
+	
+}
+
+nav > ul > li > ul > li:hover {
+	background-color: rgba(32,32,32,1.00);
+	z-index: 100;
+}
+
+nav > ul > li > ul {
+	display: none;
+}
+
+nav > ul > li:hover > ul {
+	display: block;
+	z-index: 100;
+	margin-left: 0%;
+}
+
+.footerbar {
+	text-align: center;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	color: grey;
+	font-size: 75%;
+}
+
+.footerbarme {
+	text-align: center;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	color: grey;
+	font-size: 75%;
+}
+
+.active {
+	background-color: limegreen;
+	border-radius: 0px;
+}
+
+.active:hover {
+	background-color: limegreen;
+	border-radius: 0px;
+}
+
+.bodyboxbravetext > carouselcontent {
+	transform: scale(0.5,0.5);
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+	position: relative;
+	transform: scale(1);
+}
+
+/* Hide the images by default */
+.mySlides {
+	display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+	cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+	transition: all .1s ease-in-out;
+	font-style: normal;
+	transform: scale(2,2);
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, enlargen the arrow size (with a smooth transition (defined in the .prev,.next divs))*/
+.prev:hover, .next:hover {
+	transform: scale(2.5,2.5);
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Six columns side by side */
+.column {
+	float: left;
+	width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.thumbnail {
+	opacity: 0.6;
+}
+
+.active, .thumbnail:hover {
+	opacity: 1;
+}
+
+.radiobuttons > li > .radiobox > input[type=radio] {
+	margin-left: 0%;
+}
+
+/* Customize the label (the container box) */
+.radiobox {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	user-select: none;
+	margin-left: 0%;
+}
+
+/* Hide the browser's default radio button */
+.radiobox > input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+	margin-left: 0%;
+	
+}
+
+/* On mouse-over, add a grey background color */
+.radiobox:hover > input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the radio button is checked, add a dark coloured background */
+.radiobox > input:checked ~ .checkmark {
+	background-color: limegreen;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiobox > input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobox > .checkmark:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+.bodyboxminitext {
+	font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.bodyboxquiz {
+	font-family: "Segoe UI",Arial,sans-serif;
+	margin-left: 6%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/* Set a style for login button */
+.loginbutton > button {
+	background-color: black;
+	color: white;
+	padding: 14px 40px;
+	margin: 8px 0px 0px 43%;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 2px;
+	transform: scale(1.5, 1.5);
+	transition: all .05s ease-in-out;
+}
+
+.loginbutton > button:hover {
+	background-color: #474747;
+	border-radius: 2px;
+	transform: scale(1.6,1.6);
+}
+
+.submitlogin > button {
+	background-color: black;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.submitlogin > button:hover {
+	background-color: #474747;
+}
+
+.cancelbutton > button {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+	color: white;
+	border: none;
+}
+
+.cancelbutton > button:hover {
+	background-color: #F45F54;
+	cursor: pointer;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+	position: relative;
+}
+
+img.avatar {
+	width: 40%;
+	transform: scale(0.5, 0.5);
+	border-radius: 50%;
+}
+
+.logincontainer {
+	padding: 16px;
+	z-index: 100;
+}
+
+span.password {
+	float: right;
+	padding-top: 16px;
+}
+
+/* The Login Box (background) */
+.loginbox {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 101; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 1%
+}
+
+/* loginForm content box */
+.loginForm {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+	position: absolute;
+	right: 25px;
+	top: 0;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+	transition: all .05s ease-in-out;
+}
+
+.close:hover,
+.close:focus {
+	color: red;
+	cursor: pointer;
+	transform: scale(1.3,1.3);
+}
+
+/* Add Zoom Animation */
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.3s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)} 
+	to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+	from {transform: scale(0)} 
+	to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.password {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+
+/* The switch - the box around the slider */
+.switch {
+	position: absolute;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	cursor:pointer;
+	transform: scale(0.5,0.5);
+	margin-top: -0.6%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: limegreen;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	margin-left: 26px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #ccc;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #ccc;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(-26px);
+	-ms-transform: translateX(-26px);
+	transform: translateX(-26px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+#mutebutton {
+	cursor: default; 
+	margin-left: 950%;
+}
+
+#mutebutton:hover {
+	background-color: black;
+}
+
+#mutebuttonli:hover {
+	background-color: black;
+}
+
+.quizTopicName {
+	margin-left: -7%;
+}
+#mutebuttoncheckbox {
+	cursor: pointer;
+}
+
+#branchestab {
+	cursor: pointer;
+}
+
+.totalscoremessage {
+	text-transform: uppercase;
+	font-size: 150%;
+	font-style: italic;
+}
+
+.qnoincorrectstyling {
+	text-transform: uppercase;
+	color: red;
+}
+
+.qnocorrectstyling {
+	text-transform: uppercase;
+	color: limegreen;
+}
+
+.quizreturn > a {
+	background-color: black;
+	color: white;
+	padding: 14px 40px;
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	float: left;
+	transition: all .05s ease-in-out;
+}
+
+.quizreturn > a:hover {
+	background-color: #474747;
+	border-radius: 2px;
+	transform: scale(1.1,1.1);
+}
+
+@keyframes bitedustglow {
+	from {box-shadow: 0px 2px 32px purple;}
+	to {box-shadow: 0px 2px 52px 5px purple;}
+}
+
+.bitedust > a {
+	background-color: black;
+	color: white;
+	padding: 14px 40px;
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	transition: all .05s ease-in-out;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align: center;
+	margin: 0% 0% 0% 44%;
+}
+
+.bitedust > a:hover {
+	background-color: #FFBAF4;
+	border-radius: 2px;
+	transform: scale(1.1,1.1);
+	box-shadow: 0px 2px 32px purple;
+	animation-name: bitedustglow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 0.25s;
+}
+
+@keyframes bitedusttitleglow {
+	0% {font-size: 300%; font-weight: 400; opacity:1; color: black;}
+    25% {font-size: 300%; font-weight: 400; opacity:1; color: black;}
+    50% {font-size: 300%; font-weight: 400; opacity:1; color: black;}
+    65% {font-size: 300%; font-weight: 400; opacity:1; color: black;}
+    80% {font-size: 300%; font-weight: 400; opacity:1; color: black; content: "Hmm?"}
+    90% {font-size: 300%; font-weight: 400; opacity:1; color: #FFBAF4; content: "Killer Queen"}
+    100% {font-size: 300%; font-weight: 400; opacity:1; color: #FFBAF4; content: "Daisun No Bakadun!"}
+}
+
+.bodyboxtitletextbitedust:before {
+	content: "Hmm?";
+	font-size: 300%;
+	vertical-align: baseline;
+	margin-left: 12%;
+	margin-right: 12%;
+	font-family: "Segoe UI",Arial,sans-serif;
+	font-weight: 400;
+	margin-bottom: -2%;
+	margin-top: -3%;
+	animation-name: bitedusttitleglow;
+	animation-duration: 1s;
+    animation-iteration-count: 1;
+}

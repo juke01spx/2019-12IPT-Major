@@ -1,0 +1,1 @@
+select q.quizQuestionsId, q.quizQuestion from quizQuestions as q where q.quizTopicId = 1
